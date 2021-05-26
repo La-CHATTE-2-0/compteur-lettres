@@ -1,3 +1,7 @@
-* {
+textarea, table, footer {
   text-align: center;
+}
+
+#export {
+  margin: 10px 0;
 }
