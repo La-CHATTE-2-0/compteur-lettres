@@ -1,25 +1,38 @@
 const excludedChars = ['\n', '\r', '\t', ' ']
+const equivalentChars = {
+    "9": "6",
+    "O": "0",
+    "^": "v",
+    "⁰": "o"
+}
 
-function Occurences(text) {
+
+
+function Occurences(text, boolMemeInsigne) {
 
     let occurences = []
 
-    for (const c of text) {
-        if (!excludedChars.includes(c)){
-            const c_occurence  = occurences[c]
+    for (let c of text) {
+        if (!excludedChars.includes(c)) {
+            if (boolMemeInsigne && equivalentChars[c]) {
+                c = equivalentChars[c]
+                console.log("equivalent")
+            }
+
+            const c_occurence = occurences[c]
             if (c_occurence)
-            occurences[c] = occurences[c] + 1
+                occurences[c] = occurences[c] + 1
             else
-            occurences[c] = 1
+                occurences[c] = 1
         }
     }
 
     return occurences
 }
 
-function ExportOccurences(text) {
+function ExportOccurences(text, boolMemeInsigne) {
 
-    const occurences = Occurences(text)
+    const occurences = Occurences(text, boolMemeInsigne)
     let exportArr = [];
 
     Object
@@ -31,7 +44,7 @@ function ExportOccurences(text) {
                 nombre: occurences[key]
             })
         })
-    
+
     return exportArr
 }
 
