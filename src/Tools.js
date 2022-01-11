@@ -14,10 +14,8 @@ function Occurences(text, boolMemeInsigne) {
 
     for (let c of text) {
         if (!excludedChars.includes(c)) {
-            if (boolMemeInsigne && equivalentChars[c]) {
+            if (boolMemeInsigne && equivalentChars[c])
                 c = equivalentChars[c]
-                console.log("equivalent")
-            }
 
             const c_occurence = occurences[c]
             if (c_occurence)

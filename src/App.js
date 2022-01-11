@@ -20,7 +20,7 @@ function App() {
     if (canExport()) {
       const arr = ExportOccurences(value, memeInsigne)
       var xls = new XlsExport(arr, `Export`);
-      xls.exportToXLS(`export_lettres.xls`);
+      xls.exportToXLS(`export_lettres_${Date.now().toString()}.xls`);
     }
   };
 
