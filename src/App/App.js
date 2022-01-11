@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
-import Afficheur from './Afficheur';
-import { ExportOccurences, excludedChars } from "./Tools"
+import OccurencesTable from './components/OccurencesTable';
+import { ExportOccurences, excludedChars } from "./tools/occurencesTool"
 import XlsExport from "xlsexport"
 
 function App() {
@@ -45,7 +45,7 @@ function App() {
       </div>
 
       <button id="export" type="button" className="btn btn-dark" onClick={handleExport}>Export en XLS</button>
-      <Afficheur text={value} boolMemeInsigne={memeInsigne} />
+      <OccurencesTable text={value} boolMemeInsigne={memeInsigne} />
     </div>
   );
 }

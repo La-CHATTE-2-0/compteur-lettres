@@ -1,6 +1,6 @@
-import { Occurences } from "./Tools"
+import { Occurences } from "../tools/occurencesTool"
 
-function Afficheur(props) {
+function OccurencesTable(props) {
 
     let occurences = Occurences(props.text, props.boolMemeInsigne)
 
@@ -31,4 +31,4 @@ function Afficheur(props) {
     )
 }
 
-export default Afficheur;
+export default OccurencesTable;

@@ -6,8 +6,6 @@ const equivalentChars = {
     "⁰": "o"
 }
 
-
-
 function Occurences(text, boolMemeInsigne) {
 
     let occurences = []
